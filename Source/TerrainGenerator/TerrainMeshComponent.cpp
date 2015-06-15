@@ -342,7 +342,7 @@ void UTerrainMeshComponent::UpdateBodySetup()
 {
 	if (ModelBodySetup == NULL)
 	{
-		ModelBodySetup = ConstructObject<UBodySetup>(UBodySetup::StaticClass(), this);
+		ModelBodySetup = NewObject<UBodySetup>(this, NAME_None, RF_Transactional);
 		ModelBodySetup->CollisionTraceFlag = CTF_UseComplexAsSimple;
 		ModelBodySetup->bMeshCollideAll = true;
 	}

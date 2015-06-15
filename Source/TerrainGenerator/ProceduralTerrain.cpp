@@ -14,7 +14,7 @@ AProceduralTerrain::AProceduralTerrain(const FObjectInitializer& ObjectInitializ
 	TerrainGenerationWorker = 0;
 	//PrimaryActorTick.bCanEverTick = true;
 	gMaterial = NULL;
-	WaitingThreads.Init(0);
+	
 	MaxThreads = 1;
 }
 
@@ -193,7 +193,7 @@ UTerrainMeshComponent * AProceduralTerrain::CreateTerrainComponent()
 	name.AppendString(ComponentName);
 
 	// Create our TerrainMeshComponent 
-	UTerrainMeshComponent *MeshComponent = ConstructObject<UTerrainMeshComponent>(UTerrainMeshComponent::StaticClass(), this, name);
+	UTerrainMeshComponent *MeshComponent = NewObject<UTerrainMeshComponent>(this, name, RF_Transactional);
 	MeshComponent->RegisterComponent();
 
 	// Apply a material if we have any
