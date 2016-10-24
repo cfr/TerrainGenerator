@@ -1,9 +1,5 @@
 #pragma once
 
-#include "WindowsCriticalSection.h"
-
-
-
 struct FVoxel
 {
 	float Voxel;
