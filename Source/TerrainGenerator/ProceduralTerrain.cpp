@@ -103,7 +103,7 @@ bool AProceduralTerrain::UpdateChunk(int32 x, int32 y, int32 z)
 	FTerrainWorkerTask WorkerTask;
 	WorkerTask.ChunkIdentifier = TerrainChunk->ChunkLocation;
 	WorkerTask.TerrainGrid = this->TerrainGrid;
-    WorkerTask.ChunkLocation = FVector(TerrainChunk->ChunkLocation);
+    WorkerTask.ChunkLocation = FVector::ZeroVector;//FVector(TerrainChunk->ChunkLocation);
 
 	WorkerTask.SurfaceCrossValue = SurfaceCrossOverValue;
 	WorkerTask.ChunkScale = ChunkScale;
